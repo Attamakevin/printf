@@ -9,7 +9,7 @@
  
 int (*get_print(char s))(va_list, flags_t*)
 {
-	ph func_arr[] == {
+	ph func_arr[] = {
 		{'i', print_int},
 		{'s', print_str},
 		{'c', print_char},
@@ -24,7 +24,7 @@ int (*get_print(char s))(va_list, flags_t*)
 		{'S', print_bigs},
 		['p', print_address},
 	        {'%', print_percent}
-}
+		};
 
 
 int flags = 14;
