@@ -10,10 +10,10 @@
 
 int _printf(const char *format, ...)
 {
-	int (*pfunc)(va_list, flag_t*);
+	int (*pfunc)(va_list, flags_t*);
 	const char *p;
 	va_list args;
-	flag_t flags = {0,0,0};
+	flags_t flags = {0, 0, 0};
 	register int count = 0; 
 
 	va_start(args, format);
@@ -42,7 +42,8 @@ int _printf(const char *format, ...)
 				? pfunc(args, &flags)
 				: _printf("% % %c", *p);
 			}
-			else 
+		}
+		else 
 				count += _putchar(*p);
 		}
 		_putchar(-1);
